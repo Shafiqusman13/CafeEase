@@ -14,7 +14,7 @@ CafeEase
 CafeEase adalah aplikasi pemesanan makanan dan minuman berbasis digital yang dirancang untuk cafe yang masih menggunakan sistem konvensional (antre di kasir). Aplikasi ini memungkinkan pelanggan memesan langsung dari meja melalui pemindaian QR Code, meminimalisir antrean, serta memberikan kenyamanan bagi pengguna. Selain itu, CafeEase membantu pemilik cafe mengelola pesanan agar lebih cepat, rapi, dan efisien.
 
 **Anggota Kelompok:**
-1. [Shafiq Usman N] - [4523210103]
+1. [Shafiq Usman Nurhananto] - [4523210103]
 2. [M Dhafa Fahlevie Hardiansyach] - [4523210071]
 3. [Ciesha Fajar Ramadhan] - [4523210031]
 4. [Fazril Fadilah ] - [4523210047]
