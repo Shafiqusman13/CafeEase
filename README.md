@@ -32,7 +32,7 @@ Pengembangan sistem pemesanan mandiri ini dirancang secara khusus untuk memfasil
 
 *(Tempatkan foto dokumentasi saat melakukan observasi dan wawancara dengan pihak Coffee Shop Satukala di sini)*
 
-`[<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/5a9cd9c7-bf43-496a-a5f8-53a00257529e" />]`
+<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/934acec0-ca8d-4542-9f83-3496dd962e5b" />
 
 ---
 
