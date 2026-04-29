@@ -2,7 +2,7 @@
 ## Sistem Pemesanan Meja Mandiri (Self-Ordering System) - Coffee Shop Satukala
 
 **Mata Kuliah:** Analisis Perancangan Berorientasi Objek  
-**Dosen Pengampu:** Adi Wahyu Pribadi, S.T M.T  
+**Dosen Pengampu:** Adi Wahyu Pribadi, S.Si., M.Kom  
 
 ---
 
@@ -30,8 +30,7 @@ Pengembangan sistem pemesanan mandiri ini dirancang secara khusus untuk memfasil
 
 ### 3. Foto Dokumen Wawancara
 
-*(Tempatkan foto dokumentasi saat melakukan observasi dan wawancara dengan pihak Coffee Shop Satukala di sini)*
-
+*(foto dokumentasi saat melakukan observasi dan wawancara dengan pihak Coffee Shop Satukala di sini)*
 <img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/934acec0-ca8d-4542-9f83-3496dd962e5b" />
 
 ---
@@ -178,16 +177,3 @@ Berdasarkan seluruh proses analisis dan observasi yang kelompok kami lakukan, da
 * **Use Case 04 - Pembayaran:** Integrasi metode pembayaran digital dan update status transaksi.
 * **Use Case 05 - Kelola Pesanan:** Pihak dapur/bar memperbarui status pesanan (diproses/selesai).
 * **Use Case 06 - Manajemen Menu:** Admin melakukan update harga, deskripsi, atau ketersediaan menu.
-
----
-
-## WORKFLOW!!
-
-1. `git clone` (Clone repo ke local)
-2. `git checkout -b NAMAKALIAN` (Membuat branch dengan nama sendiri)
-3. `git checkout branch_tujuan` (Pindah branch kalian atau kalau ke main repo berarti checkout main)
-4. `git add .` (Menambah yang ingin dicommit)
-5. `git commit -m "fiks"` (commit yang ingin dipush)
-6. `git push -u origin BRANCHKALIAN` (push ke BRANCH KALIAN, JANGAN KE MAIN!!)
-7. `git pull main` (Posisi branch main, pull dari main. PULL KETIKA SUDAH MERGE FINAL)
-8. `git merge main` (Posisi branch sendiri, merge dari main yang terupdate!)
