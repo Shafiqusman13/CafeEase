@@ -2,15 +2,15 @@
 ## Sistem Pemesanan Meja Mandiri (Self-Ordering System) - Coffee Shop Satukala
 
 **Mata Kuliah:** Analisis Perancangan Berorientasi Objek  
-**Dosen Pengampu:** Adi Wahyu Pribadi, S.Si., M.Kom  
+**Dosen Pengampu:** Adi Wahyu Pribadi, S.Si., M.Kom.  
 
 ---
 
-### 1. Identitas Proyek
+### Identitas Proyek
+
 * **Nama Sistem:** Satukala Self-Ordering System
 * **Studi Kasus:** Coffee Shop Satukala
-* **Deskripsi Proyek:** Proyek ini bertujuan untuk merancang dan membangun sebuah sistem pemesanan mandiri (*self-ordering*) berbasis *web mobile* yang dikhususkan untuk operasional Coffee Shop Satukala. Melalui sistem ini, pelanggan tidak perlu lagi antre di kasir, melainkan cukup memindai QR Code yang tersedia di masing-masing meja untuk mengakses e-menu, memesan, hingga menyelesaikan transaksi pembayaran secara digital. Sistem ini juga terintegrasi langsung dengan dasbor karyawan untuk memproses pesanan serta dasbor pemilik (*owner*) untuk keperluan monitoring penjualan dan inventaris secara *real-time*.
-
+* **Deskripsi Proyek:** Proyek ini bertujuan untuk merancang dan membangun sebuah sistem pemesanan mandiri (self-ordering) berbasis web mobile yang dikhususkan untuk operasional Coffee Shop Satukala. Melalui sistem ini, pelanggan tidak perlu lagi antre di kasir. Pelanggan cukup memindai QR Code yang tersedia di masing-masing meja untuk mengakses katalog menu digital, melakukan pemesanan, hingga menyelesaikan transaksi pembayaran secara otonom. Sistem ini dirancang menggunakan pendekatan berorientasi objek agar terintegrasi langsung dengan dasbor karyawan untuk pemrosesan pesanan, serta dasbor pemilik (owner) untuk keperluan pemantauan penjualan dan manajemen inventaris secara real-time.
 * **Tim Pengembang (Anggota Kelompok):**
   1. Shafiq Usman Nurhananto - 4523210103
   2. M Dhafa Fahlevie Hardiansyach - 4523210071
@@ -20,160 +20,201 @@
 
 ---
 
-### 2. Sasaran Pengguna
+### Sasaran Pengguna
+
 Pengembangan sistem pemesanan mandiri ini dirancang secara khusus untuk memfasilitasi tiga kelompok sasaran utama yang terlibat dalam ekosistem operasional Coffee Shop Satukala:
-1. **Pelanggan (Customer):** Sebagai *end-user* (pengguna akhir) utama yang membutuhkan kemudahan, kecepatan, dan kenyamanan dalam melakukan pemesanan tanpa harus membuang waktu untuk berdiri dan mengantre panjang, terutama pada jam-jam sibuk.
-2. **Kasir / Karyawan (Staff/Barista):** Sebagai pelaksana operasional harian yang membutuhkan sistem yang dapat mengurangi beban kerja pencatatan manual, meminimalisir miskomunikasi dengan pelanggan, dan menyajikan daftar pesanan secara sistematis agar proses pembuatan minuman/makanan menjadi lebih efisien.
-3. **Pemilik (Owner):** Sebagai pengambil keputusan bisnis yang membutuhkan transparansi data tingkat tinggi. Pemilik membutuhkan alat untuk memantau performa penjualan, ketersediaan stok, dan menu terlaris kapan saja dan di mana saja tanpa harus bergantung pada rekap manual dari kasir.
+
+1. **Pelanggan (Customer):** Sebagai pengguna akhir (end-user) yang membutuhkan kemudahan, kecepatan, dan kenyamanan dalam melakukan pemesanan. Sistem ini mengeliminasi waktu tunggu antrean di kasir, terutama pada jam-jam operasional sibuk.
+2. **Kasir / Karyawan (Staff/Barista):** Sebagai pelaksana operasional harian yang membutuhkan sistem untuk mengurangi beban kerja pencatatan manual. Sistem ini meminimalisasi miskomunikasi pesanan dengan pelanggan dan menyajikan daftar antrean pesanan secara sistematis agar proses pembuatan produk menjadi lebih terstruktur dan efisien.
+3. **Pemilik (Owner):** Sebagai pengambil keputusan bisnis yang membutuhkan transparansi data tingkat tinggi. Pemilik memiliki akses penuh untuk memantau performa penjualan, ketersediaan stok bahan, dan pergerakan menu terlaris secara real-time dari mana saja, tanpa harus bergantung pada rekapitulasi manual pada akhir hari operasional.
 
 ---
 
-### 3. Foto Dokumen Wawancara
+### Dokumentasi Observasi dan Wawancara
 
-*(foto dokumentasi saat melakukan observasi dan wawancara dengan pihak Coffee Shop Satukala di sini)*
-<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/934acec0-ca8d-4542-9f83-3496dd962e5b" />
+Berikut adalah dokumentasi saat tim pengembang melakukan observasi lapangan dan wawancara dengan pihak pengelola Coffee Shop Satukala guna menggali kebutuhan sistem (requirements elicitation).
 
----
-
-### 5. Latar Belakang & Alur Bisnis
-**Latar Belakang:**
-Coffee Shop Satukala merupakan salah satu destinasi yang sangat diminati oleh pelanggan, terutama pada akhir pekan (*weekend*) atau jam pulang kerja. Tingginya antusiasme pelanggan sayangnya tidak diimbangi dengan sistem pemesanan yang memadai. Sistem pelayanan di Satukala saat ini masih sangat konvensional dan terpusat pada satu titik, yaitu meja kasir. Hal ini kerap kali menciptakan *bottleneck* (penumpukan) yang tidak hanya mengurangi kenyamanan ruang dalam cafe, tetapi juga memicu berbagai masalah operasional seperti kesalahan pencatatan dan kelelahan staf.
-
-**Alur Bisnis Saat Ini (Sistem Manual):**
-Alur operasional yang berjalan saat ini mewajibkan proses yang cukup panjang dan tidak efisien:
-1. Pelanggan yang baru datang harus langsung menuju meja kasir dan berdiri dalam antrean.
-2. Saat tiba gilirannya, pelanggan menyebutkan pesanannya secara lisan, dan kasir akan menginputnya secara manual ke dalam sistem *Point of Sales* (POS).
-3. Setelah menyelesaikan proses pembayaran (tunai atau kartu), kasir akan memberikan sebuah *stand* nomor meja fisik kepada pelanggan.
-4. Pelanggan kemudian mencari meja yang kosong, duduk, dan meletakkan *stand* nomor tersebut di atas meja.
-5. Di bagian belakang, barista meracik minuman berdasarkan struk cetak. Setelah selesai, pelayan (karyawan) harus membawa nampan dan berjalan mengelilingi area cafe untuk mencari di mana letak nomor meja pelanggan tersebut berada.
+<img width="1200" height="1600" alt="Dokumentasi Wawancara" src="https://github.com/user-attachments/assets/934acec0-ca8d-4542-9f83-3496dd962e5b" />
 
 ---
 
-### 6. Analisis Kebutuhan Sistem & Identifikasi Masalah
-Berdasarkan observasi dan wawancara, kelompok kami mengidentifikasi beberapa masalah krusial yang harus segera diselesaikan:
+### Latar Belakang dan Alur Bisnis
 
-**Identifikasi Masalah:**
-* **Penumpukan Antrean (Bottleneck):** Satu-satunya jalur pemesanan adalah kasir, sehingga pada saat ramai, antrean bisa mengular hingga ke pintu masuk, merusak kenyamanan visual dan spasial cafe.
-* **Risiko Human Error Tinggi:** Kebisingan di dalam cafe seringkali membuat kasir salah mendengar pesanan pelanggan (misalnya salah mencatat varian rasa, tingkat kemanisan, atau nomor meja).
-* **Kehilangan Potensi Pendapatan (Loss of Sales):** Pelanggan yang sudah duduk nyaman sangat enggan untuk memesan menu tambahan (*upselling* seperti *snack* atau minuman kedua) karena mereka malas jika harus mengantre dari awal lagi.
-* **Keterbatasan Monitoring Manajerial:** Pemilik tidak memiliki akses langsung untuk melihat omzet atau pergerakan stok secara *real-time* di pertengahan hari operasional.
+**Latar Belakang**
+Coffee Shop Satukala merupakan salah satu destinasi komersial yang memiliki tingkat kunjungan tinggi, terutama pada akhir pekan atau jam pulang kerja. Namun, tingginya antusiasme pelanggan tidak diimbangi dengan arsitektur sistem pelayanan yang memadai. Sistem pelayanan di Satukala saat ini masih sangat konvensional dan tersentralisasi pada satu titik, yaitu meja kasir. Kondisi ini secara konsisten menciptakan penumpukan antrean (bottleneck) yang tidak hanya mengurangi kenyamanan spasial pelanggan, tetapi juga memicu berbagai masalah operasional sekunder seperti kesalahan pencatatan pesanan dan kelelahan staf.
 
-**Kebutuhan Sistem (System Requirements):**
-Untuk mengatasi permasalahan di atas, sistem yang dirancang harus memiliki kemampuan berikut:
-* Mampu mendeteksi lokasi atau nomor meja pelanggan secara otomatis melalui pemindaian QR Code yang unik di setiap meja.
-* Menyediakan antarmuka Katalog Digital (E-Menu) yang interaktif, menampilkan gambar produk, harga, deskripsi, serta label ketersediaan stok.
-* Mengintegrasikan modul keranjang belanja dan gerbang pembayaran digital (*Payment Gateway* seperti QRIS atau E-Wallet) agar pelanggan bisa melakukan *checkout* mandiri.
-* Memiliki sistem notifikasi seketika (*real-time pop-up/alert*) di perangkat kasir atau dapur setiap kali ada pesanan baru yang masuk dan sudah lunas.
-* Menyediakan dasbor analitik berbasis *web* khusus untuk pemilik guna melacak histori transaksi dan performa penjualan secara instan.
+**Alur Bisnis Saat Ini (Sistem Manual)**
+Proses bisnis yang berjalan saat ini memiliki rantai operasional yang panjang dan kurang efisien:
+1. Pelanggan yang baru datang diwajibkan langsung menuju meja kasir dan berdiri dalam antrean fisik.
+2. Saat giliran tiba, pelanggan menyebutkan pesanan secara lisan, dan kasir menginput data tersebut secara manual ke dalam sistem Point of Sales (POS).
+3. Setelah menyelesaikan proses pembayaran (tunai atau kartu), kasir menyerahkan stand nomor meja fisik kepada pelanggan.
+4. Pelanggan kemudian mencari meja kosong, duduk, dan meletakkan stand nomor tersebut di atas meja.
+5. Di area produksi (dapur/bar), barista meracik pesanan berdasarkan struk cetak. Setelah selesai, pelayan harus berjalan berkeliling area kafe untuk mencari letak nomor meja pelanggan guna mengantarkan pesanan.
 
 ---
 
-### 7. Analisis Aktor
-Dalam arsitektur sistem ini, terdapat tiga entitas aktor yang memiliki hak akses dan fungsionalitas yang berbeda-beda:
+### Analisis Kebutuhan Sistem dan Identifikasi Masalah
 
-1. **Aktor: Pelanggan (Customer)**
-   * **Deskripsi Peran:** Pengguna yang berada di garis depan sistem. Mereka menggunakan *smartphone* pribadi mereka untuk berinteraksi dengan aplikasi tanpa perlu mengunduh aplikasi khusus di PlayStore/AppStore atau melakukan *login* yang rumit. Tugas utama aktor ini adalah memindai QR, mengeksplorasi menu, menyesuaikan jumlah pesanan, dan menyelesaikan pembayaran secara otonom.
-   
-2. **Aktor: Kasir / Karyawan (Staff)**
-   * **Deskripsi Peran:** Pengguna operasional yang menggunakan perangkat tablet atau komputer di area *bar/kitchen*. Aktor ini bertugas sebagai penerima informasi. Saat pesanan masuk, mereka memvalidasi pesanan tersebut, meracik pesanan, dan memperbarui status pesanan di sistem dari "Pesanan Baru" menjadi "Sedang Diproses", hingga akhirnya "Selesai/Siap Diantar".
+**Identifikasi Masalah**
+Melalui tahapan analisis, kelompok kami mengidentifikasi beberapa masalah fundamental dalam operasional kafe:
+1. **Penumpukan Antrean (Bottleneck):** Terpusatnya jalur pemesanan di kasir menyebabkan antrean panjang yang merusak pengalaman pelanggan (customer experience).
+2. **Risiko Human Error:** Tingkat kebisingan kafe seringkali memicu kesalahan pendengaran oleh kasir, berujung pada kesalahan pencatatan varian rasa, modifikasi pesanan, atau nomor meja.
+3. **Kehilangan Potensi Pendapatan (Loss of Sales):** Pelanggan cenderung enggan untuk melakukan pemesanan tambahan (upselling) karena harus kembali mengantre dari awal.
+4. **Keterbatasan Monitoring Manajerial:** Pemilik bisnis tidak memiliki kapabilitas untuk melihat omzet, laporan transaksi, atau pergerakan stok secara real-time.
+
+**Kebutuhan Sistem (System Requirements)**
+Untuk menyelesaikan permasalahan di atas, sistem dirancang dengan spesifikasi kebutuhan sebagai berikut:
+1. Kemampuan mendeteksi lokasi atau nomor meja pelanggan secara presisi melalui pemindaian QR Code unik.
+2. Penyediaan antarmuka Katalog Digital (E-Menu) yang interaktif, mencakup representasi visual produk, harga, deskripsi, dan status ketersediaan.
+3. Integrasi modul keranjang pesanan dan gerbang pembayaran digital (Payment Gateway) yang memungkinkan checkout mandiri.
+4. Fitur notifikasi seketika (real-time alert) pada perangkat operasional karyawan setiap kali transaksi pemesanan berhasil divalidasi.
+5. Penyediaan dasbor analitik berbasis web bagi pemilik untuk manajemen data master dan pemantauan metrik penjualan.
+
+---
+
+### Analisis Aktor
+
+Dalam memodelkan sistem berorientasi objek ini, diidentifikasi tiga entitas aktor dengan hak akses dan batasan fungsional yang spesifik:
+
+1. **Aktor: Pelanggan**
+Pengguna front-end yang berinteraksi dengan sistem tanpa memerlukan proses autentikasi (login) akun yang rumit. Pelanggan berinteraksi menggunakan perangkat pintar pribadi mereka. Fungsionalitas utama meliputi pemindaian QR, penelusuran katalog menu, manajemen keranjang pesanan, dan eksekusi pembayaran digital.
+
+2. **Aktor: Kasir / Karyawan**
+Pengguna operasional (back-end user) yang bertindak sebagai penerima instruksi sistem. Menggunakan perangkat keras di area produksi (dapur/bar). Fungsionalitas utama meliputi penerimaan pesanan tervalidasi, serta pembaruan status siklus pesanan (dari "Diproses" hingga "Selesai/Siap Diantar").
 
 3. **Aktor: Pemilik (Owner)**
-   * **Deskripsi Peran:** Pengguna tingkat *Administrator* yang memiliki kendali penuh terhadap basis data (*database*) sistem. Aktor ini tidak menangani pesanan harian secara langsung, melainkan fokus pada manajemen data seperti menambahkan varian menu baru, memperbarui harga, mematikan status menu yang bahan bakunya sedang kosong, serta menganalisis laporan grafik penjualan harian atau bulanan.
+Pengguna dengan hak akses administratif tertinggi (administrator). Tidak terlibat dalam siklus pemesanan individual, melainkan memegang kendali atas manajemen data secara keseluruhan. Fungsionalitas utama meliputi manipulasi data menu (Create, Read, Update, Delete), pembaruan status ketersediaan bahan, serta akses penuh terhadap visualisasi laporan penjualan.
 
 ---
 
-### 8. Analisis Perbandingan Sistem
-Untuk memperjelas nilai tambah (*value proposition*) dari proyek ini, berikut adalah perbandingan antara sistem manual yang saat ini digunakan dengan sistem digital yang kami usulkan:
+### Analisis Perbandingan Sistem
 
-| Indikator Perbandingan | Sistem Satukala Saat Ini (Manual Konvensional) | Sistem Baru (Self-Ordering System via QR) |
+| Parameter Evaluasi | Sistem Satukala Konvensional (Manual) | Satukala Self-Ordering System (Digital) |
 | :--- | :--- | :--- |
-| **Metode Pemesanan** | Tersentralisasi: Pelanggan wajib mengantre fisik di depan kasir. | Terdesentralisasi: Setiap meja berfungsi sebagai "kasir virtual" mandiri. |
-| **Metode Pembayaran** | Mengandalkan transaksi langsung dengan kasir (Tunai, EDC/Debit). | Terintegrasi dan mandiri melalui perangkat pelanggan (QRIS/E-Wallet). |
-| **Tingkat Akurasi (Error)** | Rentan *human error* (salah dengar, salah input ke POS). | Sangat presisi (data diinput dan dikonfirmasi langsung oleh pelanggan). |
-| **Pemesanan Tambahan** | Pelanggan harus kembali berdiri dan ikut antrean dari awal. | Cukup membuka *smartphone* di meja, tambah pesanan hanya dalam hitungan detik. |
-| **Pelaporan Data (Report)** | Rekapitulasi fisik yang baru bisa dilihat setelah *close shift*. | Data komprehensif, otomatis, dan dapat dipantau detik itu juga oleh Owner. |
+| **Metode Pemesanan** | Tersentralisasi: Pelanggan wajib antre fisik di depan kasir. | Terdesentralisasi: Setiap meja berfungsi sebagai terminal pemesanan mandiri. |
+| **Metode Pembayaran** | Transaksi langsung via kasir (Tunai atau EDC). | Terintegrasi otomatis melalui Payment Gateway (QRIS/E-Wallet). |
+| **Tingkat Akurasi Data** | Rentan terhadap human error (salah dengar/salah ketik). | Akurasi tinggi karena data dimasukkan dan divalidasi langsung oleh pelanggan. |
+| **Pemesanan Tambahan** | Mengharuskan pelanggan kembali ke antrean awal. | Dapat dieksekusi instan melalui perangkat pelanggan di meja. |
+| **Pelaporan dan Evaluasi** | Rekapitulasi fisik yang baru diakses setelah tutup operasional. | Laporan berbasis data real-time, dapat diakses kapan saja oleh pemilik. |
 
 ---
 
-### 9. Skenario Sistem (Use Case Utama)
-Skenario ini menggambarkan alur perjalanan utama ( *Happy Path* / *Normal Flow* ) yang terjadi ketika sistem berjalan dengan sempurna tanpa ada hambatan:
+### Daftar Use Case Sistem
 
-1. Pelanggan tiba di Coffee Shop Satukala dan langsung diarahkan untuk duduk di meja mana saja yang kosong.
-2. Di atas meja tersebut terdapat *standee* atau stiker QR Code. Pelanggan membuka kamera *smartphone* dan memindainya.
-3. *Browser* di *smartphone* pelanggan secara otomatis terbuka dan menampilkan halaman E-Menu dari sistem Satukala, lengkap dengan informasi bahwa mereka sedang berada di "Meja No. X".
-4. Pelanggan asyik menelusuri kategori menu (misal: *Signature Coffee*, *Non-Coffee*, *Pastry*), memilih tingkat kemanisan, dan menekan tombol tambah ke keranjang.
-5. Setelah selesai memilih, pelanggan menekan tombol *Checkout* dan memilih untuk membayar menggunakan QRIS (Gopay/OVO/Dana, dll).
-6. Segera setelah pembayaran berhasil diverifikasi oleh sistem, data pesanan langsung ditembakkan ke layar monitor di area dapur/bar.
-7. Karyawan yang melihat pesanan tersebut segera meraciknya. Setelah selesai, karyawan menekan tombol "Pesanan Selesai" di monitor.
-8. Karyawan membawa minuman tersebut dan mengantarkannya langsung ke Meja No. X secara akurat. Seluruh proses transaksi ini otomatis tersimpan di Dasbor Laporan milik Owner.
+Sistem ini diabstraksikan ke dalam enam fungsionalitas utama (Use Case) sebagai berikut:
+1. **Use Case 01 - Scan QR Code:** Pelanggan memindai kode identifikasi meja untuk mendapatkan akses ke dalam sistem.
+2. **Use Case 02 - Lihat Menu:** Sistem menampilkan daftar menu, harga, dan foto produk secara real-time kepada pelanggan.
+3. **Use Case 03 - Pesan Menu:** Pelanggan mengelola pilihan menu ke dalam keranjang dan mengonfirmasi pesanan ke sistem.
+4. **Use Case 04 - Pembayaran:** Pelanggan melakukan integrasi dengan metode pembayaran digital dan sistem memperbarui status transaksi.
+5. **Use Case 05 - Kelola Pesanan:** Pihak operasional (dapur/bar) memantau pesanan masuk dan memperbarui status pesanan (diproses/selesai).
+6. **Use Case 06 - Manajemen Menu:** Admin (Pemilik) melakukan pembaruan terkait data master seperti harga, deskripsi, atau ketersediaan menu operasional.
 
 ---
 
-### 10. Detail Use Case
-Bagian ini menjabarkan rincian spesifikasi dari aktivitas utama yang dilakukan oleh para aktor di dalam sistem.
+### Detail Spesifikasi Use Case
 
-**A. UC-01: Melakukan Pemesanan Mandiri**
-* **Aktor Utama:** Pelanggan
-* **Pre-condition (Kondisi Awal):** Pelanggan telah berhasil memindai QR Code dan halaman E-Menu terbuka di peramban gawai mereka.
-* **Main Flow (Alur Utama):**
-  1. Sistem menampilkan antarmuka katalog menu beserta rincian harga.
-  2. Pelanggan memilih satu atau beberapa menu dan menempatkannya ke dalam keranjang virtual.
-  3. Sistem mengkalkulasi total harga, termasuk pajak (jika ada), dan menampilkan ringkasan pesanan.
-  4. Pelanggan melakukan konfirmasi dan diarahkan ke gerbang pembayaran.
-  5. Pelanggan menyelesaikan proses pembayaran.
-* **Post-condition (Kondisi Akhir):** Sistem menerbitkan nomor resi digital, merubah status keranjang menjadi pesanan aktif, dan meneruskan data tersebut ke *database* operasional toko.
-
-**B. UC-02: Mengelola Pesanan Masuk**
-* **Aktor Utama:** Kasir / Karyawan
-* **Pre-condition:** Karyawan telah melakukan proses autentikasi (login) dan halaman *Live Dashboard* sedang aktif di layar mereka.
-* **Main Flow (Alur Utama):**
-  1. Sistem memicu bunyi notifikasi visual dan audio saat pesanan baru dari UC-01 masuk.
-  2. Karyawan meninjau detail pesanan (jenis minuman, *custom request*, dan nomor meja).
-  3. Karyawan mengubah status pesanan dari "Menunggu" menjadi "Sedang Diramu/Diproses".
-  4. Setelah produk fisik siap disajikan, Karyawan mengeklik tombol "Selesai" atau "Siap Diantar".
-* **Post-condition:** Antrean pesanan di layar karyawan menjadi bersih, dan notifikasi bahwa pesanan sedang diantar dapat dilihat di layar gawai pelanggan.
-
-**C. UC-03: Manajemen Katalog dan Laporan**
-* **Aktor Utama:** Owner (Pemilik)
-* **Pre-condition:** Pemilik telah *login* ke *Admin Dashboard* menggunakan kredensial khusus tingkat atas.
-* **Main Flow (Alur Utama):**
-  1. Pemilik masuk ke modul "Laporan Penjualan" dan sistem merender grafik statistik pendapatan serta produk paling populer pada rentang waktu yang dipilih.
-  2. Pemilik masuk ke modul "Katalog Menu" untuk menonaktifkan (*hide*) menu "Ice Caramel Macchiato" karena stok sirup karamel terpantau habis di gudang.
-  3. Pemilik menyimpan perubahan tersebut.
-* **Post-condition:** Data E-Menu pada sisi pelanggan otomatis diperbarui secara *real-time* tanpa perlu me-*refresh* server secara manual.
+* **UC-01: Scan QR Code**
+  * **Aktor:** Pelanggan
+  * **Deskripsi:** Proses inisialisasi awal di mana pelanggan memindai QR Code di meja.
+  * **Alur Utama:** Pelanggan memindai QR. Sistem membaca parameter nomor meja dari tautan tersebut dan mengarahkan pengguna ke halaman utama tanpa perlu login.
+* **UC-02: Lihat Menu**
+  * **Aktor:** Pelanggan
+  * **Deskripsi:** Sistem menyajikan antarmuka katalog digital secara interaktif.
+  * **Alur Utama:** Sistem melakukan query ke basis data dan menampilkan daftar menu, harga, foto produk berdasarkan kategori. Data ketersediaan (stok) disajikan secara real-time.
+* **UC-03: Pesan Menu**
+  * **Aktor:** Pelanggan
+  * **Deskripsi:** Proses seleksi produk dan pengaturan kuantitas sebelum proses checkout.
+  * **Alur Utama:** Pelanggan memilih menu, mengatur catatan khusus (misalnya: tingkat kemanisan), dan menambahkannya ke keranjang lalu menekan konfirmasi pesanan.
+* **UC-04: Pembayaran**
+  * **Aktor:** Pelanggan, Payment Gateway
+  * **Deskripsi:** Proses penyelesaian transaksi finansial atas pesanan.
+  * **Alur Utama:** Sistem menghasilkan total tagihan. Pelanggan memilih metode pembayaran (QRIS) dan mentransfer dana. API Payment Gateway memberikan respon sukses ke sistem, yang kemudian mengubah status transaksi menjadi "Lunas".
+* **UC-05: Kelola Pesanan**
+  * **Aktor:** Kasir / Karyawan
+  * **Deskripsi:** Manajemen siklus hidup pesanan di area dapur.
+  * **Alur Utama:** Sistem membunyikan notifikasi saat pesanan lunas masuk. Karyawan meracik minuman, lalu memperbarui status menjadi "Selesai" dan mengantarkan pesanan ke nomor meja.
+* **UC-06: Manajemen Menu (Admin)**
+  * **Aktor:** Pemilik (Owner)
+  * **Deskripsi:** Pemeliharaan data master terkait produk yang dijual.
+  * **Alur Utama:** Pemilik mengakses panel manajemen untuk menambah menu baru, mengedit harga, atau menonaktifkan tampilan menu yang bahan bakunya habis.
 
 ---
 
-### 11. Diagram Use Case
+### Rancangan Analisis dan Pemodelan Berorientasi Objek (UML Diagrams)
 
-*(Masukin hasil diagram use case nya)*
+Pendekatan Analisis dan Perancangan Berorientasi Objek (APBO) pada proyek Satukala Self-Ordering System diwujudkan melalui lima jenis pemodelan diagram Unified Modeling Language (UML).
+
+#### 1. Diagram Use Case
+Diagram ini memodelkan interaksi fungsionalitas sistem dengan para aktor yang terlibat.
+
+![Diagram Use Case]( Masukkan Link atau Drag & Drop Gambar Diagram Use Case Di Sini )
+
+**Poin Analisis Use Case:**
+* **Aktor Utama dan Eksternal:** Menempatkan Pelanggan, Karyawan, dan Pemilik sebagai aktor manusia, serta Payment Gateway sebagai aktor sistem eksternal pendukung transaksi.
+* **Relasi Include:** Menghubungkan fungsi Pesan Menu dengan Pembayaran, mengartikan pesanan tidak valid tanpa adanya pembayaran berhasil.
+* **Relasi Extend:** Kustomisasi pesanan bersifat opsional (tambahan) saat pelanggan melakukan pemesanan.
+
+#### 2. Diagram Class
+Diagram ini merepresentasikan struktur statis dan cetak biru dari objek-objek penyusun sistem.
+
+![Diagram Class]( Masukkan Link atau Drag & Drop Gambar Diagram Class Di Sini )
+
+**Poin Analisis Class Diagram:**
+* **Konsep Pewarisan (Inheritance):** Karyawan dan Pemilik mewarisi atribut dari abstract class Pengguna untuk menghindari redundansi kode.
+* **Relasi Komposisi:** Kelas `Pesanan` memiliki relasi komposisi kuat dengan `DetailPesanan`, menunjukkan bahwa detail item tidak akan eksis tanpa adanya data transaksi utama.
+* **Visibilitas dan Enkapsulasi:** Atribut dilindungi dengan modifier private (-) dan hanya dapat diakses melalui metode public (+).
+
+#### 3. Diagram State
+Diagram ini memodelkan siklus hidup (lifecycle) dinamis dari satu objek tunggal, yaitu entitas **Pesanan**.
+
+![Diagram State]( Masukkan Link atau Drag & Drop Gambar Diagram State Di Sini )
+
+**Poin Analisis State Diagram:**
+* **Siklus Hidup Terpusat:** Memantau satu objek spesifik secara ketat mulai dari `KeranjangBelanja` hingga `SelesaiDiterima`.
+* **Composite State:** Terdapat status bersarang (sub-state) seperti proses `PersiapanBahan` dan `Peracikan` yang terjadi di dalam status utama `SedangDiproses`.
+* **Penanganan Exception:** Terdapat jalur alternatif `BatalKadaluarsa` jika pembayaran tidak diselesaikan dalam batas waktu.
+
+#### 4. Diagram Sequence
+Diagram ini memetakan komunikasi data dan pemanggilan fungsi antar komponen berdasarkan urutan waktu operasional (alur Checkout & Pembayaran).
+
+![Diagram Sequence]( Masukkan Link atau Drag & Drop Gambar Diagram Sequence Di Sini )
+
+**Poin Analisis Sequence Diagram:**
+* **Pemisahan Lapisan Arsitektur (MVC):** Memisahkan interaksi antara antarmuka (UI), logika pengendali (Controller), dan penyimpanan (Database).
+* **Asynchronous Call (Webhook):** Menggambarkan penggunaan webhook callback dari Payment Gateway untuk mengonfirmasi status pembayaran tanpa membuat sistem hang/menunggu.
+* **Kondisional (Alt Block):** Menyediakan skenario percabangan secara teknis jika pembayaran disetujui atau ditolak oleh API eksternal.
+
+#### 5. Diagram Activity
+Diagram ini memvisualisasikan Standar Operasional Prosedur (SOP) dan aliran kerja end-to-end secara makro.
+
+![Diagram Activity]( Masukkan Link atau Drag & Drop Gambar Diagram Activity Di Sini )
+
+**Poin Analisis Activity Diagram:**
+* **Pembagian Swimlane:** Membedakan jalur tanggung jawab antara aksi fisik Pelanggan, proses komputasi Sistem Satukala, dan tugas operasional Karyawan Dapur.
+* **Titik Keputusan (Decision Node):** Memodelkan logika percabangan saat validasi finansial berlangsung.
+* **Sinkronisasi Lintas Batas:** Menunjukkan aliran paralel di mana pesanan yang sukses dibayar oleh pelanggan langsung dikirimkan sebagai notifikasi kerja ke layar dapur.
 
 ---
 
-### 12. Rincian Alur Sistem (Activity Sequence)
-Alur aktivitas (*Activity*) ini mengilustrasikan perpindahan kontrol dari satu aktor ke sistem, hingga selesai dari awal pertemuan pelanggan dengan sistem sampai produk akhir disajikan:
+### Rincian Alur Sistem (Proses Eksekusi)
 
-1. **[Pelanggan]** Menginisiasi proses dengan memindai QR Code yang berada di permukaan meja.
-2. **[Sistem]** Menerima permintaan *URL*, membaca parameter nomor meja (misal: `?table=12`), dan merender halaman utama UI Pemesanan.
-3. **[Pelanggan]** Menambahkan produk yang diinginkan ke dalam *cart* (keranjang) dan menekan tombol *Checkout*.
-4. **[Sistem]** Mengunci pesanan, menghasilkan *QRIS dinamis* atau tautan *E-Wallet*, dan menampilkannya di layar *smartphone* pelanggan.
-5. **[Pelanggan]** Melakukan *scan* QRIS dan memasukkan PIN untuk menyetujui pemotongan saldo.
-6. **[Sistem]** Melakukan komunikasi dengan API perbankan pihak ketiga untuk memverifikasi dana masuk. Setelah *callback* berstatus *Success* diterima, sistem menerbitkan struk elektronik.
-7. **[Sistem]** Mengirimkan beban kerja (data pesanan) tersebut ke tampilan Dasbor Pesanan Aktif milik karyawan.
-8. **[Kasir/Karyawan]** Mengamati layar, melihat pesanan dari Meja 12, dan memulai proses pembuatan secara fisik (*brewing* / *cooking*).
-9. **[Kasir/Karyawan]** Menekan tombol aksi "Selesaikan Pesanan" di dalam dasbor setelah produk fisik siap.
-10. **[Kasir/Karyawan]** Membawa nampan berisi produk dan langsung menuju Meja 12 karena lokasinya sudah teridentifikasi dengan jelas.
-11. **[Sistem]** Memasukkan data transaksi yang telah berstatus "Selesai" tersebut ke dalam log riwayat transaksi (Buku Besar Digital).
-12. **[Owner]** Dapat melihat riwayat tersebut secara agregat dalam bentuk grafik visual di Dasbor Manajemen kapan pun diperlukan.
-13. **Proses Berakhir.**
+Alur aktivitas berikut menggambarkan transisi kontrol dari aktor menuju sistem hingga transaksi bisnis selesai:
+1. **Inisiasi:** Pelanggan memulai sesi dengan memindai stiker QR Code di meja.
+2. **Identifikasi:** Sistem menerima URL, mengekstrak nomor meja, dan merender UI Katalog Menu.
+3. **Seleksi:** Pelanggan menambahkan produk ke dalam keranjang lalu mengeksekusi tombol Checkout.
+4. **Pembuatan Tagihan:** Sistem mengkalkulasi total pembayaran dan mengonstruksi kode pembayaran QRIS di layar.
+5. **Otorisasi Pembayaran:** Pelanggan memindai kode transaksi melalui aplikasi E-Wallet.
+6. **Validasi Sistem:** Backend Satukala menerima callback respons sukses dari perbankan, lalu menerbitkan resi digital.
+7. **Distribusi Tugas:** Sistem secara real-time mengirimkan rincian pesanan ke Dasbor Karyawan di dapur.
+8. **Produksi:** Karyawan memvalidasi pesanan, memperbarui status menjadi "Sedang Diproses", dan mulai meracik hidangan.
+9. **Penyelesaian:** Karyawan menekan tombol "Pesanan Selesai" dan mengantarkannya secara akurat ke meja pelanggan.
+10. **Pencatatan & Monitoring:** Sistem merekam seluruh metrik transaksi secara permanen ke basis data yang kemudian divisualisasikan dalam Dasbor Pemilik.
 
 ---
 
-### 13. Kesimpulan & Solusi yang Ditawarkan
-Berdasarkan seluruh proses analisis dan observasi yang kelompok kami lakukan, dapat ditarik kesimpulan bahwa titik lemah (*pain point*) terbesar pada Coffee Shop Satukala adalah sistem operasional berbasis sentralisasi di area kasir. Sistem manual ini menghambat efisiensi waktu kerja karyawan dan berpotensi menurunkan tingkat kepuasan serta keinginan pelanggan untuk berbelanja lebih banyak.
+### Kesimpulan dan Solusi
 
-**Solusi Terintegrasi:** Kelompok kami mengusulkan pengembangan **"Satukala Self-Ordering System"**. Solusi inovatif ini secara fundamental mengubah setiap meja pelanggan menjadi terminal kasir mandiri (*virtual point-of-sale*). Dengan mendigitalisasi proses pemesanan melalui QR Code, sistem ini tidak hanya mengeliminasi antrean panjang secara efektif, tetapi juga memastikan akurasi data pesanan, merampingkan komunikasi antara pelanggan dan area dapur, serta memberikan kapabilitas manajerial yang transparan bagi pemilik bisnis. Implementasi sistem ini diyakini akan mendongkrak efisiensi operasional sekaligus meningkatkan margin keuntungan bisnis secara signifikan melalui *customer experience* yang modern dan prima.* **Use Case 02 - Lihat Menu:** Menampilkan daftar menu, harga, dan foto produk secara real-time.
-* **Use Case 03 - Pesan Menu:** Pelanggan memilih menu dan mengonfirmasi pesanan ke sistem.
-* **Use Case 04 - Pembayaran:** Integrasi metode pembayaran digital dan update status transaksi.
-* **Use Case 05 - Kelola Pesanan:** Pihak dapur/bar memperbarui status pesanan (diproses/selesai).
-* **Use Case 06 - Manajemen Menu:** Admin melakukan update harga, deskripsi, atau ketersediaan menu.
+Berdasarkan analisis pemodelan proses bisnis yang telah dilakukan, dapat disimpulkan bahwa hambatan operasional utama pada Coffee Shop Satukala bersumber dari sistem pemesanan konvensional yang berpusat pada area kasir. Pola operasional ini terbukti menurunkan efisiensi waktu kerja staf, memperbesar peluang kesalahan manusia (human error), dan membatasi kapabilitas kafe dalam memaksimalkan volume penjualan pada jam sibuk.
+
+**Solusi Terintegrasi:**
+Proyek ini mengusulkan implementasi "Satukala Self-Ordering System", sebuah perangkat lunak berbasis arsitektur pemesanan terdesentralisasi. Melalui integrasi teknologi QR Code, sistem mengubah setiap meja pelanggan menjadi terminal Point of Sales (POS) mandiri. Perancangan sistem berorientasi objek ini secara efektif mengeliminasi antrean fisik, menjamin akurasi aliran data pesanan dari pelanggan ke dapur, dan mendigitalkan arus kas. Lebih jauh, kapabilitas administratif yang tertanam di dalam sistem memberikan kemampuan manajerial yang transparan bagi pemilik bisnis. Solusi teknologi ini diproyeksikan mampu meningkatkan efisiensi operasional kafe sekaligus mendorong pertumbuhan profitabilitas melalui pengalaman pelanggan yang modern dan terpadu.
