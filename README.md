@@ -34,7 +34,7 @@ Pengembangan sistem pemesanan mandiri ini dirancang secara khusus untuk memfasil
 
 Berikut adalah dokumentasi saat tim pengembang melakukan observasi lapangan dan wawancara dengan pihak pengelola Coffee Shop Satukala guna menggali kebutuhan sistem (requirements elicitation).
 
-<img width="1200" height="1600" alt="Dokumentasi Wawancara" src="https://github.com/user-attachments/assets/934acec0-ca8d-4542-9f83-3496dd962e5b" />
+https://www.youtube.com/watch?si=yQFtswdCiJxkT1oR&v=H-4yBjV6tcg&feature=youtu.be
 
 ---
 
@@ -147,7 +147,7 @@ Pendekatan Analisis dan Perancangan Berorientasi Objek (APBO) pada proyek Satuka
 #### 1. Diagram Use Case
 Diagram ini memodelkan interaksi fungsionalitas sistem dengan para aktor yang terlibat.
 
-![Diagram Use Case]( Masukkan Link atau Drag & Drop Gambar Diagram Use Case Di Sini )
+<img width="6228" height="3786" alt="LES Checkout Process Flow-2026-06-24-164507" src="https://github.com/user-attachments/assets/bc15df1e-dbe1-4d35-9e45-2d338765a28b" />
 
 **Poin Analisis Use Case:**
 * **Aktor Utama dan Eksternal:** Menempatkan Pelanggan, Karyawan, dan Pemilik sebagai aktor manusia, serta Payment Gateway sebagai aktor sistem eksternal pendukung transaksi.
@@ -157,7 +157,7 @@ Diagram ini memodelkan interaksi fungsionalitas sistem dengan para aktor yang te
 #### 2. Diagram Class
 Diagram ini merepresentasikan struktur statis dan cetak biru dari objek-objek penyusun sistem.
 
-![Diagram Class]( Masukkan Link atau Drag & Drop Gambar Diagram Class Di Sini )
+<img width="828" height="1096" alt="Diagram class" src="https://github.com/user-attachments/assets/f6a18e64-6f11-4598-8bbe-05176d5b6e21" />
 
 **Poin Analisis Class Diagram:**
 * **Konsep Pewarisan (Inheritance):** Karyawan dan Pemilik mewarisi atribut dari abstract class Pengguna untuk menghindari redundansi kode.
@@ -167,7 +167,7 @@ Diagram ini merepresentasikan struktur statis dan cetak biru dari objek-objek pe
 #### 3. Diagram State
 Diagram ini memodelkan siklus hidup (lifecycle) dinamis dari satu objek tunggal, yaitu entitas **Pesanan**.
 
-![Diagram State]( Masukkan Link atau Drag & Drop Gambar Diagram State Di Sini )
+<img width="2045" height="8192" alt="Diagram State" src="https://github.com/user-attachments/assets/0488edb6-a84c-4730-88e5-a8b332b401a1" />
 
 **Poin Analisis State Diagram:**
 * **Siklus Hidup Terpusat:** Memantau satu objek spesifik secara ketat mulai dari `KeranjangBelanja` hingga `SelesaiDiterima`.
@@ -177,7 +177,7 @@ Diagram ini memodelkan siklus hidup (lifecycle) dinamis dari satu objek tunggal,
 #### 4. Diagram Sequence
 Diagram ini memetakan komunikasi data dan pemanggilan fungsi antar komponen berdasarkan urutan waktu operasional (alur Checkout & Pembayaran).
 
-![Diagram Sequence]( Masukkan Link atau Drag & Drop Gambar Diagram Sequence Di Sini )
+<img width="8192" height="5258" alt="Diagram Sequence" src="https://github.com/user-attachments/assets/90ec5b67-264c-409e-9a89-7b21124c3331" />
 
 **Poin Analisis Sequence Diagram:**
 * **Pemisahan Lapisan Arsitektur (MVC):** Memisahkan interaksi antara antarmuka (UI), logika pengendali (Controller), dan penyimpanan (Database).
@@ -187,7 +187,7 @@ Diagram ini memetakan komunikasi data dan pemanggilan fungsi antar komponen berd
 #### 5. Diagram Activity
 Diagram ini memvisualisasikan Standar Operasional Prosedur (SOP) dan aliran kerja end-to-end secara makro.
 
-![Diagram Activity]( Masukkan Link atau Drag & Drop Gambar Diagram Activity Di Sini )
+<img width="3174" height="8192" alt="Diagram Activity" src="https://github.com/user-attachments/assets/34a9f929-3fd2-4fc5-9ae5-d2300ecb0131" />
 
 **Poin Analisis Activity Diagram:**
 * **Pembagian Swimlane:** Membedakan jalur tanggung jawab antara aksi fisik Pelanggan, proses komputasi Sistem Satukala, dan tugas operasional Karyawan Dapur.
