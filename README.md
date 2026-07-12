@@ -196,6 +196,33 @@ Diagram ini memvisualisasikan Standar Operasional Prosedur (SOP) dan aliran kerj
 
 ---
 
+### Desain Antarmuka Pengguna (UI/UX)
+
+Bagian ini memuat rancangan visual antarmuka sistem Satukala Self-Ordering System yang mengedepankan prinsip User Experience (kemudahan dan kenyamanan) serta User Interface yang responsif.
+
+**1. Tampilan Pelanggan (Customer Facing)**
+Berikut adalah alur antarmuka yang digunakan langsung oleh pelanggan dari proses inisiasi hingga transaksi selesai:
+
+*   **Halaman Pemilihan Meja (Inisiasi):**  
+    <img width="1600" height="742" alt="tamilan 1" src="https://github.com/user-attachments/assets/05a8bdad-73d2-4e4f-9d5b-d6da2befa841" />
+
+*   **Halaman Katalog Menu:**  
+   <img width="1600" height="737" alt="tampilan 2" src="https://github.com/user-attachments/assets/d0f709ff-256f-496d-9165-ec9d4d2df984" />
+
+*   **Halaman Detail & Kustomisasi Menu:**  
+    <img width="1600" height="745" alt="tampilan 3" src="https://github.com/user-attachments/assets/5aa929ef-8967-4051-8343-bb352345693f" />
+
+*   **Halaman Keranjang Belanja:**  
+    <img width="1600" height="744" alt="tampilan 4" src="https://github.com/user-attachments/assets/7a886ce4-d32e-4d79-ac9f-206ac4326733" />
+
+*   **Halaman Pembayaran (Checkout Payment):**  
+    <img width="1600" height="748" alt="tampilan 5" src="https://github.com/user-attachments/assets/1783938f-d427-4cd1-9511-58f28e6aef15" />
+
+*   **Halaman Status Pesanan (Resi Digital):**  
+    <img width="1600" height="745" alt="tampilan 6" src="https://github.com/user-attachments/assets/8f1d4451-46ac-4ea7-8596-f197c4a0d92d" />
+
+---
+
 ### Rincian Alur Sistem (Proses Eksekusi)
 
 Alur aktivitas berikut menggambarkan transisi kontrol dari aktor menuju sistem hingga transaksi bisnis selesai:
